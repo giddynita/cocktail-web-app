@@ -1,0 +1,45 @@
+import { RouterProvider, createBrowserRouter } from 'react-router-dom'
+import {
+  About,
+  Cocktail,
+  Error,
+  HomeLayout,
+  Landing,
+  Newsletter,
+  SingleErrorPage,
+} from './pages'
+import { loader as landingLoader } from './pages/Landing'
+import { loader as cocktailLoader } from './pages/Cocktail'
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <HomeLayout />,
+    errorElement: <Error />,
+    children: [
+      {
+        index: true,
+        element: <Landing />,
+        errorElement: <SingleErrorPage />,
+        loader: landingLoader,
+      },
+      {
+        path: 'cocktail/:id',
+        element: <Cocktail />,
+        errorElement: <SingleErrorPage />,
+        loader: cocktailLoader,
+      },
+      {
+        path: 'newsletter',
+        element: <Newsletter />,
+      },
+      {
+        path: 'about',
+        element: <About />,
+      },
+    ],
+  },
+])
+const App = () => {
+  return <RouterProvider router={router} />
+}
+export default App

@@ -1,0 +1,181 @@
+/* ==================== GLOBAL CSS ====================== */
+@import url('https://fonts.googleapis.com/css2?family=Quattrocento&family=Quattrocento+Sans&display=swap');
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
+  margin: 0;
+}
+img {
+  display: block;
+  max-width: 100%;
+}
+
+html {
+  font-size: 100%;
+}
+/* Variables */
+:root {
+  /* COLORS */
+  /* primary */
+  --primary-100: #d8eefe;
+  --primary-200: #b1ddfe;
+  --primary-300: #8bcdfd;
+  --primary-400: #64bafd;
+  --primary-500: #3da9fc;
+  --primary-600: #3187ca;
+  --primary-700: #256597;
+  --primary-800: #184465;
+  --primary-900: #0c2232;
+  /* grey */
+  --grey-50: #f9fafb;
+  --grey-100: #f3f4f6;
+  --grey-200: #e5e7eb;
+  --grey-300: #d1d5db;
+  --grey-400: #9ca3af;
+  --grey-500: #6b7280;
+  --grey-600: #4b5563;
+  --grey-700: #374151;
+  --grey-800: #1f2937;
+  --grey-900: #111827;
+  /* secondary */
+  --black: #222;
+  --white: #fff;
+  --red-light: #f8d7da;
+  --red-dark: #842029;
+  --green-light: #d1e7dd;
+  --green-dark: #0f5132;
+  /* TYPOGRAPHY */
+  --headingFont: 'Quattrocento', serif;
+  --bodyFont: 'Quattrocento Sans', sans-serif;
+  --letterSpacing: 1.2px;
+  /* BORDER */
+  --borderRadius: 0.25rem;
+  /* TRANSITION */
+  --transition: 0.3s ease-in-out all;
+  /* WIDTH */
+  --max-width: 1120px;
+  --fixed-width: 600px;
+  --view-width: 90vw;
+  /* dark mode setup */
+  --dark-mode-hero-bg-color: #333;
+  --dark-mode-text-color: var(--primary-500);
+  --backgroundColor: var(--grey-100);
+  --textColor: var(--primary-600);
+  --iconColor: var(--grey-600);
+  --darkModeTransition: color 0.3s ease-in-out,
+    background-color 0.3s ease-in-out;
+  /* box shadow*/
+  --shadow-1: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  --shadow-2: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-3: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-4: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  /* additional */
+  --hero-bg: var(--white);
+  --HeadingColor: var(--grey-700);
+  --heroTextColor: var(--grey-400);
+}
+
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --textColor: var(--dark-mode-text-color);
+    --backgroundColor: var(--dark-mode-bg-color);
+  }
+} */
+
+.dark-theme {
+  --hero-bg: var(--grey-800);
+  --HeadingColor: var(--white);
+  --heroTextColor: var(--grey-50);
+  --backgroundColor: var(--grey-900);
+}
+
+/* Typography */
+body {
+  background-color: var(--backgroundColor);
+  color: var(--textColor);
+  font-weight: 400;
+  line-height: 1.75;
+  transition: var(--darkModeTransition);
+  font-family: var(--bodyFont);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 0;
+  font-family: var(--headingFont);
+  font-weight: 400;
+  line-height: 1.3;
+  text-transform: capitalize;
+}
+h1 {
+  font-size: 3.052rem;
+}
+h2 {
+  font-size: 2.441rem;
+}
+h3 {
+  font-size: 1.953rem;
+}
+h4 {
+  font-size: 1.563rem;
+}
+h5 {
+  font-size: 1.25rem;
+}
+small,
+.text-small {
+  font-size: var(--smallText);
+}
+a {
+  text-decoration: none;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+/* loading */
+
+@keyframes loading {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loading {
+  width: 2rem;
+  height: 2rem;
+  border: 3px solid var(--grey-400);
+  border-radius: 50%;
+  border-top-color: var(--primary-500);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem auto 0.5rem;
+  animation: loading 0.6s linear infinite;
+}
+.loading-text {
+  text-align: center;
+  font-size: 1.2rem;
+  color: var(--HeadingColor);
+}
+.error {
+  text-align: center;
+  font-size: 1.2rem;
+  color: var(--HeadingColor);
+  margin-block: 2rem 0.5rem;
+}
+/* ==================== PROJECT CSS ====================== */
+.page {
+  width: var(--view-width);
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding: 5rem 2rem;
+}
